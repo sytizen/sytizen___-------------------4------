@@ -20,6 +20,15 @@ jobs:
         uses: pnpm/setup@v1
       - name: run `pnpm run check:lint`
         run: pnpm run check:lint
+  types:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v7
+      - name: setup pnpm
+        uses: pnpm/setup@v1
+      - name: run `pnpm run check:types`
+        run: pnpm run check:types
 name: ci
 on:
   pull_request:
